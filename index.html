@@ -7,16 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <span id="version"></span>
-    <script>
-      var xmlHttp = new XMLHttpRequest();
-      xmlHttp.open( "GET", "https://raw.githubusercontent.com/splitio/java-client/master/pom.xml", false ); // false for synchronous request
-      xmlHttp.send( null );
-      var reponse = xmlHttp.responseText;
-      parser = new DOMParser();
-      xmlDoc = parser.parseFromString(reponse,"text/xml");
-      var version = xmlDoc.getElementsByTagName("version")[0].childNodes[0].nodeValue;
-      document.querySelector('#version').innerHTML = version;
-    </script>
+    <span id="version">test</span>
+    
 </body>
 </html>
