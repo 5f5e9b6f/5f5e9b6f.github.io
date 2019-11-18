@@ -10,7 +10,7 @@
     <span id="version">Loading version...</span>
     <script>
       var xmlHttp = new XMLHttpRequest();
-      xmlHttp.open( "GET", "https://raw.githubusercontent.com/splitio/java-client/master/pom.xml", true );
+      xmlHttp.open( "GET", "https://raw.githubusercontent.com/splitio/java-client/master/pom.xml", false );
       xmlHttp.send( null );
       var reponse = xmlHttp.responseText;
       parser = new DOMParser();
