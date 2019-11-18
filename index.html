@@ -10,13 +10,18 @@
     <span id="version">Loading version...</span>
     <script>
       var xmlHttp = new XMLHttpRequest();
-      xmlHttp.open( "GET", "https://raw.githubusercontent.com/splitio/java-client/master/pom.xml", false );
-      xmlHttp.send( null );
-      var reponse = xmlHttp.responseText;
-      parser = new DOMParser();
-      xmlDoc = parser.parseFromString(reponse,"text/xml");
-      var version = xmlDoc.getElementsByTagName("version")[0].childNodes[0].nodeValue;
-      document.querySelector('#version').innerHTML = version;
+      xmlHttp.open( "GET", "https://raw.githubusercontent.com/splitio/java-client/master/pom.xml");
+      xmlHttp.send();
+      
+      Http.onreadystatechange = function(){
+        if(this.readyState==4 && this.status==200){
+          var reponse = xmlHttp.responseText;
+          parser = new DOMParser();
+          xmlDoc = parser.parseFromString(reponse,"text/xml");
+          var version = xmlDoc.getElementsByTagName("version")[0].childNodes[0].nodeValue;
+          document.querySelector('#version').innerHTML = version;
+        }
+      }
     </script>
 </body>
 </html>
