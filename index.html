@@ -13,7 +13,7 @@
       xmlHttp.open( "GET", "https://raw.githubusercontent.com/splitio/java-client/master/pom.xml");
       xmlHttp.send();
       
-      Http.onreadystatechange = function(){
+      xmlHttp.onreadystatechange = function(){
         if(this.readyState==4 && this.status==200){
           var reponse = xmlHttp.responseText;
           parser = new DOMParser();
